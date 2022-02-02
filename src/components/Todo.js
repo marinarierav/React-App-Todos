@@ -20,8 +20,11 @@ function Todo({ text, index, onDelete, onComplete, isComplete }) {
       <div className={"card " + (isComplete && "card--complete")}>
         <h2>{text}</h2>
         <div className="actions">
-          <button className="btn btn--alt" onClick={() => onComplete(index)}>
-            Complete
+          <button
+            className={"btn btn--alt " + (isComplete && "btn--complete")}
+            onClick={() => onComplete(index)}
+          >
+            {isComplete ? "Completed" : "Complete"}
           </button>
           <button className="btn" onClick={deleteButtonClicked}>
             X
