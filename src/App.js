@@ -20,13 +20,25 @@ function App() {
     setTodos(newTodos);
   };
 
+  const completeTodo = (index) => {
+    const newTodos = [...todos];
+    newTodos[index].isComplete = !newTodos[index].isComplete;
+    setTodos(newTodos);
+  };
+
   return (
     <div>
       <h1 className="title">My Todos</h1>
       <div className="content">
         {todos.map((todo, index) => {
           return (
-            <Todo text={todo.text} index={index} onDelete={deleteTodo}></Todo>
+            <Todo
+              text={todo.text}
+              index={index}
+              onDelete={deleteTodo}
+              onComplete={completeTodo}
+              isComplete={todo.isComplete}
+            ></Todo>
           );
         })}
         <TodoForm addTodo={addTodo} className="card" />

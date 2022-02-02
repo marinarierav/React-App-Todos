@@ -49,6 +49,11 @@ h2 {
   padding: 1rem;
 }
 
+.card--complete {
+  text-decoration: line-through;
+  background-color: #e8e8e8;
+}
+
 .list {
   padding-bottom: 0.5rem;
 }

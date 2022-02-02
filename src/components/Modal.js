@@ -1,7 +1,7 @@
 function Modal(props) {
   return (
     <div className="modal">
-      <p>Are you sure?</p>
+      <p>Are you sure you want to delete this item?</p>
       <button className="btn btn--alt" onClick={props.onCancel}>
         Cancel
       </button>

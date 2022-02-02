@@ -2,7 +2,7 @@ import { useState } from "react";
 import Backdrop from "./Backdrop";
 import Modal from "./Modal";
 
-function Todo({ text, index, onDelete }) {
+function Todo({ text, index, onDelete, onComplete, isComplete }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   function deleteButtonClicked() {
@@ -17,11 +17,14 @@ function Todo({ text, index, onDelete }) {
 
   return (
     <div className="list">
-      <div className="card">
+      <div className={"card " + (isComplete && "card--complete")}>
         <h2>{text}</h2>
         <div className="actions">
+          <button className="btn btn--alt" onClick={() => onComplete(index)}>
+            Complete
+          </button>
           <button className="btn" onClick={deleteButtonClicked}>
-            Delete
+            X
           </button>
         </div>
         {isModalOpen && (
