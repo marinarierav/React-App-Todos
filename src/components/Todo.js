@@ -14,15 +14,17 @@ function Todo(props) {
   }
 
   return (
-    <div className="card">
-      <h2>{props.text}</h2>
-      <div className="actions">
-        <button className="btn" onClick={deleteHandler}>
-          Delete
-        </button>
+    <div className="list">
+      <div className="card">
+        <h2>{props.text}</h2>
+        <div className="actions">
+          <button className="btn" onClick={deleteHandler}>
+            Delete
+          </button>
+        </div>
+        {isModalOpen && <Modal onCancel={closeModalHandler} />}
+        {isModalOpen && <Backdrop onClick={closeModalHandler} />}
       </div>
-      {isModalOpen && <Modal onCancel={closeModalHandler} />}
-      {isModalOpen && <Backdrop onClick={closeModalHandler} />}
     </div>
   );
 }

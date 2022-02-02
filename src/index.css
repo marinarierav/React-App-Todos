@@ -5,12 +5,16 @@
 body {
   font-family: sans-serif;
   margin: 3rem;
-  background-color: #dfdfdf;
+  background-color: #209cee;
 }
 
 h1,
 h2 {
   color: #333333;
+}
+
+.title {
+  color: white;
 }
 
 .btn {
@@ -43,7 +47,17 @@ h2 {
   border-radius: 4px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   padding: 1rem;
-  width: 20rem;
+}
+
+.list {
+  padding-bottom: 0.5rem;
+}
+
+.content {
+  background: #e8e8e8;
+  border-radius: 4px;
+  padding: 5px;
+  max-width: 50em;
 }
 
 .actions {
